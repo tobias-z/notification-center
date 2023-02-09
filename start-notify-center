@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+tiramisu --format 'source=[#source] summary=[#summary] body=[#body] timeout=[#timeout] hints=[#hints]' |
+    while read -r line; do
+        echo "$line" >> /var/log/notification-center.log
+    done

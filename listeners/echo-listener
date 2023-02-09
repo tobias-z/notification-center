@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+tail -n0 -f /var/log/notification-center.log |
+    while read -r line; do
+        echo "$line"
+    done
