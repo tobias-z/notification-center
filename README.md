@@ -1,5 +1,9 @@
 # Notification Center
 
+## About
+
+This is a simple notification-center that I wrote for myself. It is not really meant for others but can of course be used as such. However, there may be bugs, which I simply won't really care about.
+
 ## Getting Started
 
 1. Setup log file owned by yourself
