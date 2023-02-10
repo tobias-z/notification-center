@@ -6,7 +6,7 @@ tiramisu --format 'source=[#source] summary=[#summary] body=[#body]' |
     while read -r line; do
         curr="$curr $(echo $line | tr -d '\n')"
         if [[ "$line" == *"]" ]]; then
-            echo "$curr" >> /var/log/notification-center.log
+            echo "timestamp=[$(date '+%d/%m/%Y %H:%M:%S')] $curr" >> /var/log/notification-center.log
             curr=""
         fi
     done

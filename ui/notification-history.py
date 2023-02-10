@@ -29,11 +29,13 @@ class NotificationWindow(Gtk.Window):
         box.set_homogeneous(True)
 
         with open("/var/log/notification-center.log", "r") as f:
-            for line in reversed(f.readlines()):
+            for i, line in enumerate(f.readlines()):
                 source = find_notification(line, "source")
                 summary = find_notification(line, "summary")
                 body = find_notification(line, "body")
-                label = Gtk.Label(label=f"{source} - {summary}\n{body}")
+                timestamp = find_notification(line, "timestamp")
+                bottom="" if i == 0 else "________________________________________________________________________________________"
+                label = Gtk.Label(label=f"{timestamp}\n{source} - {summary}\n{body}\n{bottom}")
                 label.set_line_wrap(True)
                 label.set_size_request(250, -1)
                 label.set_max_width_chars(40)
